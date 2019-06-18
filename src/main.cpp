@@ -61,7 +61,7 @@ void loop()
 {
   HTTPClient http;  //Declare an object of class HTTPClient
  
-  http.begin("http://api-smart-traffic-light.surge.sh/");  //Specify request destination
+  http.begin("http://smart-traffic-light.herokuapp.com/preference_light");  //Specify request destination
   
   int httpCode = http.GET(); //Send the request
   
@@ -82,12 +82,12 @@ void loop()
   
   if (preference_light == 1) {
   	Serial.println("Raise time 1");
-    th1 = th1 * 5;
-    th2 = th2 * 5;
+    th1 = th1 * 4;
+    th2 = th2 * 4;
   } else if (preference_light == 2) {
     Serial.println("Raise time 2");
-    tv1 = tv1 * 5;
-  	tv2 = tv2 * 5;
+    tv1 = tv1 * 4;
+  	tv2 = tv2 * 4;
   }
   
   semaforo1(th1, th2);
